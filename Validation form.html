@@ -1,0 +1,34 @@
+
+<html >
+<head>
+<title>JavaScript form validation - checking email</title>
+</head>
+<body onload='document.form1.text1.focus()'>
+<div class="mail">
+<h2>Simple Registration form</h2>
+<form name="form1" action="#"> 
+Email address :<input type='text' name='text1' placeholder="abc@xyz.com" />
+Password:<input type="password" name="text2" placeholder="Password">
+<input type="submit" name="submit" value="Submit" onclick="ValidateEmail(document.form1.text1)"/>
+</form>
+</div>
+<script >
+	function ValidateEmail(inputText)
+{
+var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+if(inputText.value.match(mailformat))
+{
+alert("Valid email address!");
+document.form1.text1.focus();
+return true;
+}
+else
+{
+alert("You have entered an invalid email address!");
+document.form1.text1.focus();
+return false;
+}
+}
+</script>
+</body>
+</html>
